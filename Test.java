@@ -1,23 +1,40 @@
-package Coolection;
-import java.util.*;
-public class Test {
+package Exceptionn;
 
+
+
+public abstract class Test {
+
+	static void validate(int x)
+	{
+		if(x<18)
+		{
+			throw new ArithmeticException("Not Valid");
+		}
+		else
+		{
+			System.out.println("welcome to vote");
+		}
+	}
+	static void m()
+	{
+		validate(25);
+	}
+	static void p()
+	{
+		m();
+	}
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		
-		ArrayList<String>list=new ArrayList<String>();
 
-		list.add("Saurabh");
-		list.add("Vijay");
-		list.add("Sachin");
-		list.add(1, "Sarang");
-		
-		Iterator itr =list.iterator();
-		while(itr.hasNext())
+		try
 		{
-			System.out.println(itr.next());
+		p();
 		}
-		
+		catch(Exception e)
+		{
+			System.out.println("Handled");
+		}
+		System.out.println("rest code");
 	}
 
 }
